@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Volume Spike Trading — How to Spot Institutional Entry Points Before the Move | Market Structure Suite</title>
+  <meta name="description" content="Volume spikes at key levels are the clearest evidence of institutional participation available on a standard chart. Learn how to identify, grade, and trade volume spikes the right way." />
+  <meta name="keywords" content="volume spike trading, institutional volume, unusual volume indicator, TradingView volume spike, smart money volume analysis" />
+  <link rel="canonical" href="https://marketstructuresuite.com/blog/volume-spike-trading.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .blog-hero { padding: 120px 0 60px; border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .blog-hero .category-tag {
+      display: inline-block; background: rgba(0,230,118,0.1); color: var(--accent);
+      font-family: 'DM Mono', monospace; font-size: 0.75rem; letter-spacing: 0.1em;
+      text-transform: uppercase; padding: 4px 12px; border-radius: 2px; margin-bottom: 20px;
+    }
+    .blog-hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; line-height: 1.15; max-width: 820px; margin-bottom: 20px; }
+    .blog-meta { font-family: 'DM Mono', monospace; font-size: 0.8rem; color: var(--text-muted); display: flex; gap: 24px; flex-wrap: wrap; }
+    .blog-content { max-width: 760px; margin: 0 auto; padding: 60px 20px 100px; }
+    .blog-content h2 { font-size: 1.6rem; font-weight: 700; margin: 48px 0 16px; color: var(--text); }
+    .blog-content h3 { font-size: 1.15rem; font-weight: 600; margin: 32px 0 12px; color: var(--accent); }
+    .blog-content p { color: var(--text-muted); line-height: 1.85; margin-bottom: 20px; font-size: 1rem; }
+    .blog-content ul, .blog-content ol { color: var(--text-muted); line-height: 1.85; margin: 0 0 20px 24px; }
+    .blog-content li { margin-bottom: 8px; }
+    .callout-box { background: rgba(0,230,118,0.06); border-left: 3px solid var(--accent); padding: 20px 24px; margin: 32px 0; border-radius: 0 4px 4px 0; }
+    .callout-box p { margin: 0; color: var(--text); font-style: italic; }
+    .spike-grades {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 32px 0;
+    }
+    .grade-card {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 6px;
+      padding: 20px;
+    }
+    .grade-label { font-family: 'DM Mono', monospace; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px; }
+    .grade-card.grade-a .grade-label { color: var(--accent); }
+    .grade-card.grade-b .grade-label { color: #2196F3; }
+    .grade-card.grade-c .grade-label { color: #ff9800; }
+    .grade-card.grade-d .grade-label { color: #f44336; }
+    .grade-card p { color: var(--text-muted); font-size: 0.9rem; margin: 0; line-height: 1.6; }
+    .blog-cta { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 40px; text-align: center; margin-top: 60px; }
+    .blog-cta h3 { font-size: 1.4rem; color: var(--text); margin-bottom: 12px; }
+    .blog-cta p { margin-bottom: 24px; }
+    .back-to-blog { display: inline-flex; align-items: center; gap: 8px; font-family: 'DM Mono', monospace; font-size: 0.8rem; color: var(--text-muted); text-decoration: none; margin-bottom: 32px; transition: color 0.2s; }
+    .back-to-blog:hover { color: var(--accent); }
+    @media (max-width: 560px) { .spike-grades { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="../index.html" class="nav-logo">Market Structure Suite</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="../indicators.html">Indicators</a></li>
+        <li><a href="../how-it-works.html">How It Works</a></li>
+        <li><a href="../pricing.html">Pricing</a></li>
+        <li><a href="../blog.html">Blog</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="blog-hero">
+    <div class="container">
+      <span class="category-tag">Education</span>
+      <h1>Volume Spike Trading — How to Spot Institutional Entry Points Before the Move</h1>
+      <div class="blog-meta">
+        <span>May 2025</span>
+        <span>8 min read</span>
+        <span>Volume · Institutional Participation · Confirmation</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="blog-content">
+    <a href="../blog.html" class="back-to-blog">← Back to Blog</a>
+
+    <p>Price action and structure give you context. Volume gives you conviction. Of all the publicly available data on a chart, volume is the one piece of information that directly reflects the scale of participation behind a price move — and abnormal volume at key structural levels is the clearest evidence of institutional activity you can access without a Bloomberg terminal.</p>
+
+    <p>Understanding how to read volume spikes — not just "volume is high" but what that volume means in context — is one of the most underutilised edges in retail trading.</p>
+
+    <h2>What Is a Volume Spike?</h2>
+
+    <p>A volume spike is a bar where the traded volume is significantly higher than the recent average. Not slightly higher — meaningfully higher. The threshold that matters for institutional analysis is 2x or more above the rolling average volume. That's when you're no longer looking at retail noise; you're looking at serious money moving.</p>
+
+    <p>The calculation is simple:</p>
+    <ul>
+      <li>Take a rolling average of volume over a lookback period (typically 20 bars)</li>
+      <li>Any bar with volume 2x or more that average = volume spike</li>
+      <li>3x+ average = major institutional event</li>
+      <li>5x+ = extreme event (earnings, macro catalyst, significant news)</li>
+    </ul>
+
+    <p>But the raw volume number is only half the picture. The critical variable is where the spike occurs.</p>
+
+    <h2>Location Is Everything</h2>
+
+    <p>A 3x volume spike in the middle of a trend, with nothing nearby in terms of structure, is mostly noise. The same 3x spike at a key order block, after a stop hunt, or at a major VWAP level is a completely different event.</p>
+
+    <p>Volume spikes matter when they occur at locations where institutional positioning is logical. The spike is the fingerprint — the structural location tells you what they were doing.</p>
+
+    <h3>The Highest-Conviction Volume Spike Locations</h3>
+
+    <ul>
+      <li><strong>At an unmitigated order block</strong> — Price returns to an institutional order zone with high volume. The volume confirms orders were waiting there.</li>
+      <li><strong>After a stop hunt / liquidity sweep</strong> — A spike at the bottom of a wick that swept below support, followed by a reversal. The sweep provided the institutional entry liquidity; the spike was the fill.</li>
+      <li><strong>At a Fair Value Gap midpoint</strong> — Price returns to fill an FVG with abnormal volume. Institutions were waiting in the imbalance zone.</li>
+      <li><strong>At yearly or quarterly VWAP</strong> — A volume spike as price touches the yearly VWAP from above (support) or below (resistance) confirms institutional algorithmic activity at the level.</li>
+      <li><strong>At a major discount zone</strong> — High volume accumulation in the lower 25% of a range is classic institutional cost basis building.</li>
+    </ul>
+
+    <div class="callout-box">
+      <p>A volume spike at a key structural level is the market speaking directly. Institutions don't accumulate quietly — they can't, because their order sizes move the market. The spike is the noise their orders make. Learning to hear it is one of the most valuable skills in technical analysis.</p>
+    </div>
+
+    <h2>Grading Volume Spikes</h2>
+
+    <p>Not all spikes are equal. A grading framework helps prioritise which ones warrant a trade response:</p>
+
+    <div class="spike-grades">
+      <div class="grade-card grade-a">
+        <div class="grade-label">Grade A — Maximum Conviction</div>
+        <p>3x+ average volume at a key structural level (OB, FVG, VWAP), with a reversal candle forming. Trend-aligned. Multi-timeframe discount confluence.</p>
+      </div>
+      <div class="grade-card grade-b">
+        <div class="grade-label">Grade B — High Conviction</div>
+        <p>2–3x average volume at a structural level, aligned with trend. One or two confluence factors present. Actionable with normal risk sizing.</p>
+      </div>
+      <div class="grade-card grade-c">
+        <div class="grade-label">Grade C — Moderate</div>
+        <p>2x volume at a moderate structural level. No strong trend alignment or limited confluence. Monitor but reduce position size or wait for confirmation candle.</p>
+      </div>
+      <div class="grade-card grade-d">
+        <div class="grade-label">Grade D — Low Quality</div>
+        <p>High volume against the trend, at weak structure, or with no contextual significance. Likely retail participation or news event. Avoid trading.</p>
+      </div>
+    </div>
+
+    <h2>Spike Direction: Buying vs Selling Volume</h2>
+
+    <p>A volume spike on a bullish candle (candle closes above its open) suggests net buying pressure. A spike on a bearish candle suggests net selling. But the candlestick colour alone can be misleading — the most important signal is what happens next.</p>
+
+    <p>The strongest bullish volume spike setup looks like this:</p>
+    <ol>
+      <li>Price is at or near a key structural support level (OB, FVG, discount zone)</li>
+      <li>A high-volume candle forms — possibly initially bearish (the stop hunt) — then closes near its high</li>
+      <li>The next candle confirms with a bullish close, taking out the high of the spike candle</li>
+      <li>Volume on the confirmation candle is above average but not necessarily as extreme</li>
+    </ol>
+
+    <p>This three-candle confirmation pattern — spike, reversal close, confirmation — is the classic institutional entry sequence. The spike wicks down, clears stops, absorbs all available selling, then flips.</p>
+
+    <h2>Volume Spikes as Order Block Confirmation</h2>
+
+    <p>The most powerful application of volume spike analysis is as a filter for order block quality. An order block — the last bearish candle before a bullish impulse — is always more significant when that candle had above-average volume. It's the difference between a random candle that happens to precede a move and an actual institutional positioning event.</p>
+
+    <p>When grading order blocks, volume on the formation candle is one of the key differentiators between an A+ setup and a B-grade setup. An order block formed on 3x average volume, in a discount zone, with subsequent price moving strongly away — that's the A+ grade. The volume proves institutional orders were actually placed there, not just retail noise.</p>
+
+    <h2>Common Volume Spike Mistakes</h2>
+
+    <h3>Chasing the Spike Candle</h3>
+    <p>The spike candle itself is not your entry. By the time a spike candle has formed and closed with obvious volume, you're late. The spike signals where to watch for an entry — the entry is the confirmation candle that follows, or a pullback into the level with a lower-risk entry trigger.</p>
+
+    <h3>Ignoring Context</h3>
+    <p>High volume against the trend, in a premium zone, after a long extended move — that's distribution, not accumulation. Volume must be read in the context of structure and trend direction. A spike is bullish in discount with the trend. The same spike is bearish in premium against the trend.</p>
+
+    <h3>News Events</h3>
+    <p>Volume spikes caused by earnings releases, economic data drops, or major news events are a different category. The volume is retail reaction, not institutional positioning. These spikes often create false signals because the movement is driven by news absorption rather than deliberate positioning. Filter these out by checking the calendar before treating a spike as structural.</p>
+
+    <h3>Using Too Short an Average Period</h3>
+    <p>Calculating the average volume over 5 bars will show constant spikes. 20 bars is the standard for meaningful spike detection. Longer periods (50 bars) work well for swing trading to identify truly anomalous events.</p>
+
+    <h2>Putting It Together: The Complete Volume Spike Trade Setup</h2>
+
+    <p>Here's the full checklist for a high-conviction volume spike trade:</p>
+
+    <ol>
+      <li>Higher timeframe trend is clear — you have a directional bias</li>
+      <li>Price is in a discount zone relative to the relevant range (for longs)</li>
+      <li>A structural level is nearby — order block, FVG, or VWAP</li>
+      <li>A volume spike of 2x or more occurs at or near that level</li>
+      <li>The spike candle (or the one after it) closes in the direction of your trade bias</li>
+      <li>The next candle confirms with a bullish close above the spike candle's high</li>
+      <li>Entry on the confirmation candle, stop below the spike wick low</li>
+    </ol>
+
+    <p>When all seven boxes are checked, you have the highest-confidence entry available from publicly visible chart data. The volume proves someone was there — and given the location and context, that someone was almost certainly institutional.</p>
+
+    <div class="callout-box">
+      <p>Volume is the one input that can't be faked by price manipulation. Price can be pushed to any level with enough capital. But genuine volume at a level means genuine two-sided participation — real orders, real money, real significance.</p>
+    </div>
+
+    <h2>The Bottom Line</h2>
+
+    <p>Volume analysis is not complicated. But it requires patience — most bars don't produce significant spikes, and most spikes aren't at meaningful locations. The edge comes from waiting for the rare intersection: a volume spike at a key structural level, in the right zone, with trend confirmation.</p>
+
+    <p>When that combination appears, you're looking at direct evidence of institutional participation at a price level they considered significant. That's as close to certainty as technical analysis gets.</p>
+
+    <div class="blog-cta">
+      <h3>Automatically Flag Every Significant Volume Spike</h3>
+      <p>Spike Detector Pro identifies volume spikes 2x, 3x, and 5x above average — colour-coded by intensity and displayed with a ratio label so you never miss institutional activity.</p>
+      <a href="../pricing.html" class="btn btn-primary">View Pricing</a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="../index.html" class="nav-logo">Market Structure Suite</a>
+          <p>Professional TradingView indicators built on institutional market structure principles.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="../indicators.html">Indicators</a></li>
+            <li><a href="../how-it-works.html">How It Works</a></li>
+            <li><a href="../pricing.html">Pricing</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Market Structure Suite. All rights reserved.</p>
+        <p class="disclaimer">Trading involves risk. Past performance is not indicative of future results.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
